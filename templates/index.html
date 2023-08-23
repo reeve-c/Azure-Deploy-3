@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/CSS/style.css">
+    <script src="/static/script.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1>DRINK RECOMMENDATION WEB APP</h1>
+        <img src="/static/coffee_cup.png" alt="">
+    </header>
+
+    <h2>Choose you Name:</h2>
+    <form action="/recommend_drinks" method='POST'>
+        <select name="user_input" id="drinks"  onchange="saveSelection()">
+            <option value="" selected disabled hidden>Choose here</option>
+        </select>
+        <button type="submit" id="submit_btn">Submit</button>>
+    </form>
+
+    <div class="show_selection">
+        <p id="selected-user">User : </p>
+        <p class="reco_drink">Recommend Drinks:-</p>
+        <ul class="all-reco-drinks">
+            {% for i in data %}
+            <li>{{i}}</li>
+            {% endfor %}
+        </ul>
+        
+    </div>
+    
+    
+</body>
+</html>
